@@ -2,8 +2,28 @@
     "name": "discord",
     "displayName": "Discord",
     "description": "Interact with your Discord buds while you're coding",
-    "version": "0.0.1",
+    "version": "0.0.3",
     "publisher": "KuanHulio",
+    "icon": "code.png",
+    "homepage": "https://github.com/KuanHulio/vscode-discord",
+    "author": {
+        "name": "Sami Altamimi",
+        "email": "nkjjsami@gmail.com",
+        "url": "https://github.com/KuanHulio/"
+    },
+    "bugs": {
+        "url": "https://github.com/KuanHulio/vscode-discord/issues"
+    },
+    "keywords": [
+        "Discord",
+        "chat",
+        "communication",
+        "collaboration"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/KuanHulio/vscode-discord"
+    },
     "engines": {
         "vscode": "^1.19.0"
     },
@@ -11,53 +31,52 @@
         "Other"
     ],
     "activationEvents": [
-        "onCommand:extension.sendMessage",
-        "onCommand:extension.tokenChecker",
-        "onCommand:extension.uploadFromCurrentDirectory",
-        "onCommand:extension.sendSelectionMessage",
-        "onCommand:extension.uploadCurrentFile",
-        "onCommand:extension.uploadFromPath"
+        "onCommand:discord.sendMessage",
+        "onCommand:discord.tokenChecker",
+        "onCommand:discord.uploadFromCurrentDirectory",
+        "onCommand:discord.sendSelectionMessage",
+        "onCommand:discord.uploadCurrentFile",
+        "onCommand:discord.uploadFromPath"
     ],
     "main": "./out/extension",
     "contributes": {
         "commands": [
             {
-                "command": "extension.sendMessage",
+                "command": "discord.sendMessage",
                 "title": "Discord: Send a Message"
             },
             {
-                "command": "extension.tokenChecker",
+                "command": "discord.tokenChecker",
                 "title": "Discord: Check to see if your token works"
             },
             {
-                "command": "extension.uploadFromCurrentDirectory",
+                "command": "discord.uploadFromCurrentDirectory",
                 "title": "Discord: Upload a File from the Current Working Folder"
             },
             {
-                "command": "extension.sendSelectionMessage",
+                "command": "discord.sendSelectionMessage",
                 "title": "Discord: Send a Selection of Code as a Message"
             },
             {
-                "command": "extension.uploadCurrentFile",
+                "command": "discord.uploadCurrentFile",
                 "title": "Discord: Upload your Current Folder"
             },
             {
-                "command": "extension.uploadFromPath",
+                "command": "discord.uploadFromPath",
                 "title": "Discord: Upload from a Path chosen by you"
             }
-
         ],
         "keybindings": [
             {
-                "command": "extension.sendMessage",
+                "command": "discord.sendMessage",
                 "key": "ctrl+alt+m"
             },
             {
-                "command": "extension.sendSelectionMessage",
+                "command": "discord.sendSelectionMessage",
                 "key": "ctrl+alt+v"
             },
             {
-                "command": "extension.uploadFromCurrentDirectory",
+                "command": "discord.uploadFromCurrentDirectory",
                 "key": "ctrl+alt+d"
             }
         ],
@@ -83,9 +102,7 @@
             "typescript": "^2.6.1",
             "vscode": "^1.1.6",
             "@types/node": "^7.0.43",
-            "@types/mocha": "^2.2.42"
-        },
-        "dependencies": {
+            "@types/mocha": "^2.2.42",z
             "eris": "^0.8.2",
             "fs": "^0.0.1-security",
             "path": "^0.12.7"
