@@ -1,0 +1,94 @@
+{
+    "name": "discord",
+    "displayName": "Discord",
+    "description": "Interact with your Discord buds while you're coding",
+    "version": "0.0.1",
+    "publisher": "KuanHulio",
+    "engines": {
+        "vscode": "^1.19.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:extension.sendMessage",
+        "onCommand:extension.tokenChecker",
+        "onCommand:extension.uploadFromCurrentDirectory",
+        "onCommand:extension.sendSelectionMessage",
+        "onCommand:extension.uploadCurrentFile",
+        "onCommand:extension.uploadFromPath"
+    ],
+    "main": "./out/extension",
+    "contributes": {
+        "commands": [
+            {
+                "command": "extension.sendMessage",
+                "title": "Discord: Send a Message"
+            },
+            {
+                "command": "extension.tokenChecker",
+                "title": "Discord: Check to see if your token works"
+            },
+            {
+                "command": "extension.uploadFromCurrentDirectory",
+                "title": "Discord: Upload a File from the Current Working Folder"
+            },
+            {
+                "command": "extension.sendSelectionMessage",
+                "title": "Discord: Send a Selection of Code as a Message"
+            },
+            {
+                "command": "extension.uploadCurrentFile",
+                "title": "Discord: Upload your Current Folder"
+            },
+            {
+                "command": "extension.uploadFromPath",
+                "title": "Discord: Upload from a Path chosen by you"
+            }
+
+        ],
+        "keybindings": [
+            {
+                "command": "extension.sendMessage",
+                "key": "ctrl+alt+m"
+            },
+            {
+                "command": "extension.sendSelectionMessage",
+                "key": "ctrl+alt+v"
+            },
+            {
+                "command": "extension.uploadFromCurrentDirectory",
+                "key": "ctrl+alt+d"
+            }
+        ],
+        "configuration": {
+            "type": "object",
+            "title": "VSCode Discord Configuration",
+            "properties": {
+                "discord.token": {
+                    "type": "string",
+                    "default": "",
+                    "description": "Discord User Token"
+                }
+            }
+        },
+        "scripts": {
+            "vscode:prepublish": "npm run compile",
+            "compile": "tsc -p ./",
+            "watch": "tsc -watch -p ./",
+            "postinstall": "node ./node_modules/vscode/bin/install",
+            "test": "npm run compile && node ./node_modules/vscode/bin/test"
+        },
+        "devDependencies": {
+            "typescript": "^2.6.1",
+            "vscode": "^1.1.6",
+            "@types/node": "^7.0.43",
+            "@types/mocha": "^2.2.42"
+        },
+        "dependencies": {
+            "eris": "^0.8.2",
+            "fs": "^0.0.1-security",
+            "path": "^0.12.7"
+        }
+    }
+}
